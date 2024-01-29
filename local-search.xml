@@ -8,7 +8,7 @@
     <link href="/2024/01/29/%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/"/>
     <url>/2024/01/29/%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/</url>
     
-    <content type="html"><![CDATA[<p>常见的魔术方法有：__construct()、__destruct()、__get()、toString()、__sleep()、wakeup()、__invoke() 等等<br>construct:<br>__construct()名为构造函数，会在创建对象时调用一次<br><img src="/imgs/3.png" alt="图片" title="construct()"></p>]]></content>
+    <content type="html"><![CDATA[<p>常见的魔术方法有：__construct()、__destruct()、__get()、toString()、__sleep()、wakeup()、__invoke() 等等<br>construct:<br>__construct()名为构造函数，会在创建对象时调用一次<br><img src="/imgs/3.jpeg" alt="图片" title="construct()"></p>]]></content>
     
     
     
