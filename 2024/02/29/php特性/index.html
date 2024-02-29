@@ -16,25 +16,21 @@
   <meta name="author" content="1">
   <meta name="keywords" content="">
   
-    <meta name="description" content="常见的魔术方法有：__construct()、__destruct()、__get()、toString()、__sleep()、wakeup()、__invoke() 等等construct:__construct()名为构造函数，会在创建对象时调用  destruct:__destruct()名为析构函数，会在销毁对象时调用  get()&amp; set():__get() :读取不可访问（">
+    <meta name="description" content="intval绕过：科学计数法绕过 当函数中用字符串方式表示科学计数法时，函数的返回值是科学计数法前面的一个数，而对于科学计数法加数字则会返回科学计数法的数值  echo intval(1e10);              &#x2F;&#x2F; 1410065408 echo intval(‘1e10’);            &#x2F;&#x2F; 1 echo intval(‘1e10">
 <meta property="og:type" content="article">
-<meta property="og:title" content="魔术方法">
-<meta property="og:url" content="http://example.com/2024/01/29/%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:title" content="php特性">
+<meta property="og:url" content="http://example.com/2024/02/29/php%E7%89%B9%E6%80%A7/index.html">
 <meta property="og:site_name" content="1">
-<meta property="og:description" content="常见的魔术方法有：__construct()、__destruct()、__get()、toString()、__sleep()、wakeup()、__invoke() 等等construct:__construct()名为构造函数，会在创建对象时调用  destruct:__destruct()名为析构函数，会在销毁对象时调用  get()&amp; set():__get() :读取不可访问（">
+<meta property="og:description" content="intval绕过：科学计数法绕过 当函数中用字符串方式表示科学计数法时，函数的返回值是科学计数法前面的一个数，而对于科学计数法加数字则会返回科学计数法的数值  echo intval(1e10);              &#x2F;&#x2F; 1410065408 echo intval(‘1e10’);            &#x2F;&#x2F; 1 echo intval(‘1e10">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2024/01/29/%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/1.png">
-<meta property="og:image" content="http://example.com/2024/01/29/%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/2.png">
-<meta property="og:image" content="http://example.com/2024/01/29/%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/3.png">
-<meta property="article:published_time" content="2024-01-29T07:09:38.000Z">
-<meta property="article:modified_time" content="2024-01-29T09:34:25.533Z">
+<meta property="article:published_time" content="2024-02-29T14:14:22.000Z">
+<meta property="article:modified_time" content="2024-02-29T14:20:28.523Z">
 <meta property="article:author" content="1">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2024/01/29/%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/1.png">
   
   
   
-  <title>魔术方法 - 1</title>
+  <title>php特性 - 1</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -229,7 +225,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="魔术方法"></span>
+            <span id="subtitle" data-typed-text="php特性"></span>
           
         </div>
 
@@ -240,8 +236,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-01-29 15:09" pubdate>
-          2024年1月29日 下午
+        <time datetime="2024-02-29 22:14" pubdate>
+          2024年2月29日 晚上
         </time>
       </span>
     
@@ -252,7 +248,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          125 字
+          567 字
         
       </span>
     
@@ -263,7 +259,7 @@
         
         
         
-          2 分钟
+          5 分钟
         
       </span>
     
@@ -300,19 +296,70 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">魔术方法</h1>
+            <h1 id="seo-header">php特性</h1>
             
             
               <div class="markdown-body">
                 
-                <p>常见的魔术方法有：__construct()、__destruct()、__get()、toString()、__sleep()、wakeup()、__invoke() 等等<br>construct:<br>__construct()名为构造函数，会在创建对象时调用</p>
-<img src="/2024/01/29/%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/1.png" srcset="/img/loading.gif" lazyload class="">
-<p>destruct:<br>__destruct()名为析构函数，会在销毁对象时调用</p>
-<img src="/2024/01/29/%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/2.png" srcset="/img/loading.gif" lazyload class="">
-<p>get()&amp; set():<br>__get() :读取不可访问（protected 或 private）或不存在的属性的值时</p>
-<p>__set():在给不可访问（protected 或 private）或不存在的属性赋值时(不常用)</p>
-<img src="/2024/01/29/%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/3.png" srcset="/img/loading.gif" lazyload class="">
-<p>可以看到，因为类中没有b变量，所以当尝试调用b的时候会调用到__get()方法</p>
+                <p>intval绕过：<br>科学计数法绕过</p>
+<p>当函数中用字符串方式表示科学计数法时，函数的返回值是科学计数法前面的一个数，而对于科学计数法加数字则会返回科学计数法的数值</p>
+<p> echo intval(1e10);              &#x2F;&#x2F; 1410065408<br> echo intval(‘1e10’);            &#x2F;&#x2F; 1<br> echo intval(‘1e10’+1);          &#x2F;&#x2F; 1410065409</p>
+<p>MD5<br>方法二：科学计数法绕过<br>原理：可以传入两个md5加密后是0e开头的字符串，但这个以0e开头的字符串只能是纯数字，这样php在进行科学计算法的时候会将它转化为0。</p>
+<p>来自 <a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_56691564/article/details/127380406?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522170125687516800227441175%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=170125687516800227441175&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-127380406-null-null.142%5Ev96%5Epc_search_result_base2&amp;utm_term=ctf%20md5%E7%BB%95%E8%BF%87&amp;spm=1018.2226.3001.4187">https://blog.csdn.net/m0_56691564/article/details/127380406?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522170125687516800227441175%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=170125687516800227441175&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-127380406-null-null.142^v96^pc_search_result_base2&amp;utm_term=ctf%20md5%E7%BB%95%E8%BF%87&amp;spm=1018.2226.3001.4187</a> </p>
+<p>0e215962017经过MD5加密后还是以0e开头</p>
+<p>preg_match()函数</p>
+<p>preg_match 函数用于执行一个正则表达式匹配。</p>
+<p>详细用法可以参考：<a target="_blank" rel="noopener" href="https://www.runoob.com/php/php-preg_match.html">https://www.runoob.com/php/php-preg_match.html</a></p>
+<p>绕过方法：preg_match只能处理字符串，如果不按规定传一个字符串，通常是传一个数组进去，这样就会报错,如果正则不匹配多行(&#x2F;m)也可用上面的换行方法绕过</p>
+<pre><code class="hljs">if(isset($_GET[&#39;num&#39;]))&#123;
+
+    $num = $_GET[&#39;num&#39;];
+
+    if(preg_match(&quot;/[0-9]/&quot;, $num))&#123;[t1] 
+
+        die(&quot;no no no!&quot;);
+
+    &#125;
+
+    if(intval($num))&#123;
+
+        echo $flag;
+
+    &#125;
+
+&#125;
+
+//?num[]=1
+
+上面介绍过了，intval() 不能用于 object，否则会产生 E_NOTICE 错误并返回 1
+</code></pre>
+<p>str_replace函数</p>
+<p>str_replace() 函数用于替换字符串中指定字符（区分大小写）</p>
+<pre><code class="hljs">&lt;?php
+echo str_replace(&quot;world&quot;,&quot;Peter&quot;,&quot;Hello world!&quot;);
+?&gt;
+
+//输出：Hello Peter!
+
+str_replace(find,replace,string,count)
+参数	描述
+find	必需。规定要查找的值。
+replace	必需。规定替换 find 中的值的值。
+string	必需。规定被搜索的字符串。
+count	可选。一个变量，对替换数进行计数。
+</code></pre>
+<p>绕过方法：str_replace无法迭代过滤 ，可以通过双写绕过</p>
+<pre><code class="hljs">$sql=$_GET[&#39;s&#39;];
+
+$sql=str_replace(&#39;select&#39;,&#39;&#39;,$sql);
+
+echo $sql;
+
+?&gt;
+
+//?s=sselectelect
+</code></pre>
+<p>————————————————<br>版权声明：本文为CSDN博主「码啊码」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_48108919/article/details/123279251">https://blog.csdn.net/m0_48108919/article/details/123279251</a></p>
 
                 
               </div>
@@ -330,8 +377,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>魔术方法</div>
-      <div>http://example.com/2024/01/29/魔术方法/</div>
+      <div>php特性</div>
+      <div>http://example.com/2024/02/29/php特性/</div>
     </div>
     <div class="license-meta">
       
@@ -343,7 +390,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年1月29日</div>
+          <div>2024年2月29日</div>
         </div>
       
       
@@ -375,9 +422,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/29/php%E7%89%B9%E6%80%A7/" title="php特性">
+                      <a href="/2024/02/29/RSA/" title="RSA">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">php特性</span>
+                        <span class="hidden-mobile">RSA</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -385,8 +432,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/01/25/Rce/" title="Rce">
-                        <span class="hidden-mobile">Rce</span>
+                      <a href="/2024/01/29/%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/" title="魔术方法">
+                        <span class="hidden-mobile">魔术方法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
